@@ -1,0 +1,183 @@
+body{
+    background-color: rgb(230, 234, 238, 0.5);
+    font-family: 'Roboto', sans-serif;
+}
+
+.link {
+    text-decoration: none;
+}
+#nav {
+    display: grid;
+    /* background-color: rgb(221, 221, 226); */
+    border-top: 3px solid gray;
+    height: 50px;
+    padding: 15px 25px;
+    grid-template-columns: 10% 90%;
+    align-content: center;
+    font-size: 1.2em;
+}
+    .navList>li{
+        list-style: none;
+        display:inline;
+        float:right;
+        margin: 0px 50px;
+    }
+    .liNav{
+        text-decoration: none;
+        font-weight: bold;
+        color: gray;
+    }
+        .liNav:hover{
+            cursor: pointer;
+            color: crimson;
+        }
+    .redNav{
+        text-decoration: none;
+        font-weight: bold;
+        color: crimson; 
+    }
+    .redNav:hover{
+        cursor: pointer;
+        color: black;
+    }
+    #welcomeItem {
+        background-image: url('../assets/workers-team.jpg');
+        /* background-color: blanchedalmond; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
+        padding: 50px;
+    }
+    
+    #welcomeItem2 {
+        margin: 30x 0 0 40px;
+        padding: 20px;
+        width: 40%;
+        background: rgba(255, 255, 255, 0.2);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 100%);
+    }
+    
+    .redButton {
+        height: 30px;
+        /* width: 120px; */
+        width: fit-content;
+        padding: 0px 15px;
+        margin: 0 0 0 10px;
+        border-radius: 15px;
+        border: none;
+        background: crimson;
+        color: white;
+    }
+    
+    .redButton:hover {
+        cursor: pointer;
+        background-color: rgb(185, 21, 54);
+    }
+    
+    span {
+        color: crimson;
+        font-weight: bold;
+        font-size: 1.1em;
+        text-shadow: 1px 1px black;
+        text-decoration: none;
+    }
+    
+    #overline {
+        border-top: 1px solid crimson;
+        width: fit-content;
+        padding-top: 10px;
+    }
+    
+    h1 {
+        margin-bottom: 0;
+    }
+    
+    .infoBlock {
+        margin: 3% 5%;
+        text-align: center;
+        width: 90%;
+    }
+    
+    .info {
+        text-align: justify;
+    }
+    .columns {
+        display: grid;
+        /* grid-template-columns: 35% 64%; */
+        grid-template-columns: 45% 54%;
+        margin: 3% 5% ;
+    }
+    
+    .leftPart {
+        background: rgb(250, 246, 246, 0.5);
+        padding: 30px 0px 0px 50px;
+        text-align: justify;
+        padding: 0px 5px;
+    }
+    
+    .leftPart1 {
+        padding: 0 10px;
+    }
+      
+    .leftList {
+        list-style: none;
+        height: fit-content;
+        padding: 5px;
+        border-bottom: 1px solid rgba(100, 100, 100, 0.5);
+    }
+    
+    .leftList:hover {
+        background: crimson;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .rightPart {
+        justify-content: end;
+        background-image: url('../assets/warm-home.jpg');
+        background-size: cover;
+        /* background-repeat: no-repeat; */
+        /* background-color: darkgray; */
+        width: 100%;
+        z-index: -1;
+    }
+    
+    .rightPart2 {
+        width: 500px;
+        height: 50%;
+        text-align: justify;
+        /* margin: 275px 100px 0px 0px; */
+        margin: 25% 0px 0px 0px;
+        padding: 10px;
+        /* background: rgba(255, 255, 255, 0.6); */
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+        z-index: 5;
+    }
+    .form {
+        margin: 0px 20%;
+    }
+    .form>input {
+        width: 300px;
+        height: 25px;
+        border: 1px solid crimson;
+        border-radius: 10px;
+        margin: 5px 0px;
+    }
+    .form>textarea {
+        width: 300px;
+        height: 230px;
+        border: 1px solid crimson;
+        border-radius: 10px;        
+    }
+    #requestImg {
+        background-image: url('../assets/logo.jpg');
+        /* background-color: blanchedalmond; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
+        width: 200px;
+        /* padding: 50px;  */
+    }
+    
+
