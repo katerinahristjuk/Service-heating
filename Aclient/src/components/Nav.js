@@ -6,6 +6,7 @@ export function Nav() {
 
     return (
         <div id="nav">
+            <div className='nav'>
             <ul className="navList">
                 <li><Link to="/" className="redNav">HOME</Link></li>
                 {/* <li><Link to="/" className="liNav"><image src='logo.jpg' alt='logo'/></Link></li> */}
@@ -24,9 +25,19 @@ export function Nav() {
                 <li><Link to="/users" className="liNav">Users</Link></li>
                 <li><Link to="/consumers" className="liNav">Consumers</Link></li>
                 <li><Link to="/" className="redNav">Log Out</Link></li>
-            </ul>                     */}
+            </ul>                     */}                
+            </div>
+            <div className='nav'>
+            <ul className="navList">
+                <li><Link to="/" className="redNav">HOME</Link></li>
+            </ul>
+            <ul className="navList">
+                <li><Link to="/" className="redNav">LOG OUT</Link></li>
+                <li><Link to="/users" className="liNav">EMPLOYEES</Link></li>
+                <li><Link to="/consumers" className="liNav">CONSUMERS</Link></li>
+                <li><Link to="/active-interventions" className="liNav">ACTIVE INTERVENTIONS</Link></li>
+            </ul>              
+            </div>
         </div>
-
-        
     )
 }

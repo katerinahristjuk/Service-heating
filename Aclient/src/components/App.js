@@ -9,7 +9,9 @@ import {Users} from './Users';
 import {Consumers} from './Consumers';
 import {Home} from './Home';
 import {Request} from './Request';
-import { Contact } from './Contact'
+import { Contact } from './Contact';
+import { ActiveInterventions } from './ActiveInterventions';
+import { Order } from './Order';
 
 export function App() {
 
@@ -27,6 +29,8 @@ export function App() {
                 <Route path="/consumers" component={Consumers} />
                 <Route path="/request" component={Request} />
                 <Route path="/contact" component={Contact} />
+                <Route exact path="/active-interventions" component={ActiveInterventions} />
+                <Route path="/active-interventions/:orderId" component={Order} />
 
             </Switch>
         </div>

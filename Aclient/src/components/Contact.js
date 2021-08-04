@@ -21,6 +21,7 @@ export function Contact(){
                     turpis in purus ornare porta vitae et ante. Sed auctor purus ut nibh elementum, vel sollicitudin nibh facilisis. Quisque ac egestas enim. Sed feugiat risus rhoncus metus varius, at dignissim mauris sagittis. Vestibulum pretium est eu justo
                     pretium finibus. Vestibulum a interdum justo. Curabitur sit amet massa a lorem dapibus suscipit ac ac dolor. Nam ut imperdiet eros. Etiam non porta lorem, vitae porttitor elit. Integer vel porttitor lorem. Donec suscipit lorem orci, sit amet
                     placerat justo placerat sed.</p>
+                <p class="info"><span>WORKING HOURS:  </span>Mon-Fri 8:00-20:00.</p>
             </div>
             <div className='columns'>
                 <div>
@@ -29,8 +30,8 @@ export function Contact(){
                 </div>
                 <div>
                     <h2><span>EMAIL:</span></h2>
-                    <span>heating-service@mail.com</span>
-                </div>
+                    <span>heating-service@mail.com</span>                       
+                </div>                
             </div>
         </div>
     )

@@ -14,7 +14,7 @@ export function Request(){
                         lacus. Aenean feugiat hendrerit dolor, ullamcorper 
                         sollicitudin mi ullamcorper id. Nulla vel tortor sapien. 
                         Proin tristique erat bibendum felis sollicitudin finibus. </p>
-                    <div id="requestImg"></div>
+                    <div className="logoImg"></div>
                 </div>  
                 <div className="columns">
                     <div className="leftPart">

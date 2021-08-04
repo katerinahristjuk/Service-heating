@@ -54,9 +54,10 @@ export function Register(){
                             // value={user.lastName}
                             // onChange={(e) => setUser({...user, lastName: e.target.value})}                            
                             ></input>
-                        <p>Birthday</p>
+                        <p>Position</p>
                         <input 
-                            type='date'
+                            type='text'
+                            placeholder='Maintenance assistant'
                             // value={user.birthday}
                             // onChange={(e) => setUser({...user, birthday: e.target.value})}                            
                             ></input>
