@@ -15,16 +15,17 @@ api.use(cors());
 //     algorithms: ['HS256']
 // }).unless({ path: '/api/v1/users' }));
 
-const domain = '/service-heating/api/v1'
+const domain = '/service-heating/api/v1/interventions'
 //da se stavi vo config
 
-api.get(`${domain}/active-interventions`, controller.fetchAll)
+// api.get(`${domain}/active`, controller.fetchAll)
+api.get(`${domain}/`, controller.fetchAll)
 api.post(`${domain}/request`, controller.post)
-api.get(`${domain}/active-interventions/:orderId`, controller.fetchOne)
-api.delete(`${domain}/active-interventions/:orderId/delete`, controller.delete)
+api.get(`${domain}/:orderId`, controller.fetchOne)
+api.delete(`${domain}/:orderId/delete`, controller.delete)
 
 const CONNECTION_URL = 'mongodb+srv://KaterinaH:KaterinaH123@cluster0.yyofs.mongodb.net/service?retryWrites=true&w=majority';   
-const PORT = process.env.PORT || 7002
+const PORT = process.env.PORT || 7001
     
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then (() => console.log('Connected to database!'))

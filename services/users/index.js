@@ -20,13 +20,14 @@ const domain = '/service-heating/api/v1'
 //da se stavi vo config
 
 api.get(`${domain}/users`, controller.fetchAll)
-api.post(`${domain}/`, controller.register)
+api.post(`${domain}/register`, controller.register)
+// api.post(`${domain}/login`, controller.login)
 api.get(`${domain}/:id`, controller.fetchOne)
-api.patch(`${domain}/:id`, controller.update)
+// api.patch(`${domain}/:id`, controller.update)
 api.delete(`${domain}/:id`, controller.delete)
 
 const CONNECTION_URL = 'mongodb+srv://KaterinaH:KaterinaH123@cluster0.yyofs.mongodb.net/service?retryWrites=true&w=majority';   
-const PORT = process.env.PORT || 7001
+const PORT = process.env.PORT || 7002
     
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then (() => console.log('Connected to database!'))
