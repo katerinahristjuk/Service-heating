@@ -27,7 +27,9 @@ const interventionSchema = mongoose.Schema({
         type: String,
     },
     status: {
-        type: Boolean,
-        default: true,
+        type: String,
+        default: "Active",
     },
-})
+});
+
+module.exports = mongoose.model('Intervention', interventionSchema);

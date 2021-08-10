@@ -1,4 +1,4 @@
-const Intervntion = require('../models/interventionsModel');
+const Intervention = require('../models/interventionsModel');
 
 module.exports = {
 fetchAll: async (req, res) =>{
@@ -48,8 +48,8 @@ post: async (req, res) => {
 delete: async (req, res) => {
 
     try{
-        const delInt = await User.findByIdAndDelete(req.params.orderId);
-        const interventions = await User.find();
+        const delInt = await Intervention.findByIdAndDelete(req.params.orderId);
+        const interventions = await Intervention.find();
         res.status(200).send({
             message: `Intervention ${delInt._id} is successfully deleted`,
             interventions

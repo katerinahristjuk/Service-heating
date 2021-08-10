@@ -8,7 +8,6 @@ const cors= require('cors');
 api.use(express.json());
 api.use(cors());
 
-
 // api.use(jwt({secret: 'secret_key', algorithms: ['HS256']}));
 
 // api.use(jwt({
