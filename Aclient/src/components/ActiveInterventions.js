@@ -12,51 +12,55 @@ export function ActiveInterventions(){
             <div className='infoBlock'>
                 <table>
                     <thead>
-                        <th>ID-request</th>
-                        <th>Date</th>
-                        <th>Street</th>
-                        <th>No.</th>
-                        <th>Entr.</th>
-                        <th>App.No</th>
-                        <th>Phone</th>
-                        <th>e-mail</th>
-                        <th>Description</th>
-                        <th>Status</th>
-                        <th>Intervention order</th>
-                        <th>Mark as done</th>
+                        <tr>
+                            <th>ID-request</th>
+                            <th>Date</th>
+                            <th>Street</th>
+                            <th>No.</th>
+                            <th>Entr.</th>
+                            <th>App.No</th>
+                            <th>Phone</th>
+                            <th>e-mail</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Intervention order</th>
+                            <th>Mark as done</th>                            
+                        </tr>
                     </thead>
-                    <tr>
-                        <td>1</td>
-                        <td>5-7-2021</td>
-                        <td>Leninova</td>
-                        <td>20</td>
-                        <td>2</td>
-                        <td>15</td>
-                        <td>+38972365412</td>
-                        <td>email@mail.com</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit. Curabitur ut dui ac risus auctor ornare. 
-                        Nam congue ligula quis venenatis auctor.</td>
-                        <td>Active</td>
-                        <td><button className='redButton'>ORDER</button></td>
-                        <td><button className='redButton'>done</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>5-7-2021</td>
-                        <td>Leninova</td>
-                        <td>20</td>
-                        <td>2</td>
-                        <td>15</td>
-                        <td>+38972365412</td>
-                        <td>email@mail.com</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit. Curabitur ut dui ac risus auctor ornare. 
-                        Nam congue ligula quis venenatis auctor.</td>
-                        <td>Active</td>
-                        <td><button className='redButton'><Link to=''></Link>ORDER</button></td>
-                        <td><button className='redButton'>done</button></td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>5-7-2021</td>
+                            <td>Leninova</td>
+                            <td>20</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td>+38972365412</td>
+                            <td>email@mail.com</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing 
+                            elit. Curabitur ut dui ac risus auctor ornare. 
+                            Nam congue ligula quis venenatis auctor.</td>
+                            <td>Active</td>
+                            <td><button className='redButton'><Link className='link' to='/active-interventions/:orderId'>ORDER</Link></button></td>
+                            <td><button className='redButton'>done</button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>5-7-2021</td>
+                            <td>Leninova</td>
+                            <td>20</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td>+38972365412</td>
+                            <td>email@mail.com</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing 
+                            elit. Curabitur ut dui ac risus auctor ornare. 
+                            Nam congue ligula quis venenatis auctor.</td>
+                            <td>Active</td>
+                            <td><button className='redButton'><Link to=''></Link>ORDER</button></td>
+                            <td><button className='redButton'>done</button></td>
+                        </tr>                        
+                    </tbody>
                 </table>
             </div>
         </div>

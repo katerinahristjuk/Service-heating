@@ -1,6 +1,6 @@
 const express = require('express');
 const api = express();
-const controller = require('../../controllers/usersController');
+const controller = require('../../controllers/interventionsController');
 const mongoose = require('mongoose');
 const cors= require('cors');
 // const jwt = require('express-jwt')
@@ -19,14 +19,13 @@ api.use(cors());
 const domain = '/service-heating/api/v1'
 //da se stavi vo config
 
-api.get(`${domain}/users`, controller.fetchAll)
-api.post(`${domain}/`, controller.register)
-api.get(`${domain}/:id`, controller.fetchOne)
-api.patch(`${domain}/:id`, controller.update)
-api.delete(`${domain}/:id`, controller.delete)
+api.get(`${domain}/active-interventions`, controller.fetchAll)
+api.post(`${domain}/request`, controller.post)
+api.get(`${domain}/active-interventions/:orderId`, controller.fetchOne)
+api.delete(`${domain}/active-interventions/:orderId/delete`, controller.delete)
 
 const CONNECTION_URL = 'mongodb+srv://KaterinaH:KaterinaH123@cluster0.yyofs.mongodb.net/service?retryWrites=true&w=majority';   
-const PORT = process.env.PORT || 7001
+const PORT = process.env.PORT || 7002
     
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then (() => console.log('Connected to database!'))

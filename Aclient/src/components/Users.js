@@ -1,6 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import { fetchUsers } from '../actions/UsersActions' 
 
 export function Users(){
+
+    const dispatch = useDispatch();
+    const users = useSelector(state => state.UserReducer);
+ 
+    useEffect(() => { 
+        dispatch(fetchUsers());
+        console.log("users:");
+        console.log(users);
+    },[dispatch, users]);
 
     return(
         <div id="users">
@@ -10,33 +21,27 @@ export function Users(){
         <div className='infoBlock'>
             <table>
                 <thead>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Position</th>
-                    <th>Email</th>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Position</th>
+                        <th>Email</th>                       
+                    </tr>
                 </thead>
-                <tr>
-                    <td>1</td>
-                    <td>John</td>
-                    <td>Smith</td>
-                    <td>Foreman</td>
-                    <td>js@mail.com</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>John</td>
-                    <td>Smith</td>
-                    <td>Foreman</td>
-                    <td>js@mail.com</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>John</td>
-                    <td>Smith</td>
-                    <td>Foreman</td>
-                    <td>js@mail.com</td>
-                </tr>
+                <tbody>
+                    {users.map(user => {
+                        return(
+                            <tr key={user._id}>
+                                <td>{user._id}</td>
+                                <td>{user.firstName}</td>
+                                <td>{user.lastName}</td>
+                                <td>{user.position}</td>
+                                <td>{user.email}</td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
             </table>
         </div>
         </div>

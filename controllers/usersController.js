@@ -40,7 +40,7 @@ register: async (req, res) => {
         const users = await User.find();
         res.status(200).send({
             error: false,
-            message: `New user ${newUser.full_name} is here:`,
+            message: `New user ${newUser.firstName} ${newUser.lastName} is here:`,
             users
         });
     } catch (error) {
@@ -52,11 +52,12 @@ register: async (req, res) => {
 },
 update: async (req, res)=>{
     try {
-        await User.findByIdAndUpdate(req.params.id, req.body); 
+        const user = await User.findByIdAndUpdate(req.params.id, req.body); 
         const users = await User.find();
         res.status(200).send({
             error: false,
             message: `User ${req.params.id} is updated`,
+            user,
             users});        
     } catch (error) {
         res.status(500).send({
@@ -68,11 +69,11 @@ update: async (req, res)=>{
 delete: async (req, res) => {
 
     try{
-        await User.findByIdAndDelete(req.params.id);
+        const delUser = await User.findByIdAndDelete(req.params.id);
         const users = await User.find();
         res.status(200).send({
             error: false,
-            message: `User ${newUser.full_name} is deleted:`,
+            message: `User ${delUser.firstName} ${delUser.lastName} is deleted:`,
             users
         });        
     } catch (error) {

@@ -1,6 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 export function Consumers(){
+
+    const [consumers, setConsumers] = useState([])
+
+    useEffect(()=>{
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res=>res.json())
+        .then(json=>setConsumers(json))
+        .catch(err=>alert(err))
+    },[])
 
     return(
         <div id="consumers">
@@ -10,32 +19,41 @@ export function Consumers(){
             <div className='infoBlock'>
                 <table>
                     <thead>
-                        <th>Customer</th>
-                        <th>Street</th>
-                        <th>No.</th>
-                        <th>Entr.</th>
-                        <th>App.No</th>
-                        <th>Phone</th>
-                        <th>e-mail</th>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Street</th>
+                            <th>Suite</th>
+                            <th>Phone</th>
+                            <th>e-mail</th>                            
+                        </tr>
                     </thead>
-                    <tr>
-                        <td>John Smith</td>
-                        <td>Leninova</td>
-                        <td>20</td>
-                        <td>2</td>
-                        <td>15</td>
-                        <td>+38972365412</td>
-                        <td>email@mail.com</td>
-                    </tr>
-                    <tr>
-                    <td>John Smith</td>
-                        <td>Leninova</td>
-                        <td>20</td>
-                        <td>2</td>
-                        <td>15</td>
-                        <td>+38972365412</td>
-                        <td>email@mail.com</td>
-                    </tr>
+                    <tbody>
+                    {consumers.map(consumer => {
+                        return(
+                            <tr key={consumer._id}>
+                                <td>{consumer.id}</td>
+                                <td>{consumer.name}</td>
+                                <td>{consumer.address.street}</td>
+                                <td>{consumer.address.suite}</td>
+                                <td>{consumer.phone}</td>
+                                <td>{consumer.email}</td>
+                            </tr>
+                        )
+                    })}                   
+                    {consumers.map(consumer => {
+                        return(
+                            <tr key={consumer._id}>
+                                <td>{consumer.id}</td>
+                                <td>{consumer.name}</td>
+                                <td>{consumer.address.street}</td>
+                                <td>{consumer.address.suite}</td>
+                                <td>{consumer.phone}</td>
+                                <td>{consumer.email}</td>
+                            </tr>
+                        )
+                    })}                   
+                    </tbody>
                 </table>
             </div>
         </div>
