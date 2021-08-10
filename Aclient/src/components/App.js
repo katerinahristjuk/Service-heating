@@ -12,6 +12,7 @@ import {Request} from './Request';
 import { Contact } from './Contact';
 import { ActiveInterventions } from './ActiveInterventions';
 import { Order } from './Order';
+import { ThankYouNote } from './ThankYouNote'
 
 export function App() {
 
@@ -27,10 +28,11 @@ export function App() {
                 <Route path="/register" component={Register} />
                 <Route path="/users" component={Users} />
                 <Route path="/consumers" component={Consumers} />
-                <Route path="/request" component={Request} />
                 <Route path="/contact" component={Contact} />
-                <Route exact path="/active-interventions" component={ActiveInterventions} />
-                <Route path="/active-interventions/:orderId" component={Order} />
+                <Route exact path="/interventions" component={ActiveInterventions} />
+                <Route exact path="/interventions/request" component={Request} />
+                <Route exact path="/interventions/request/done" component={ThankYouNote} />
+                <Route exact path="/interventions/:orderId" component={Order} />
 
             </Switch>
         </div>

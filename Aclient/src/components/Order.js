@@ -1,7 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import { order } from '../actions/InterventionsActions';
 import '../assets/index.css';
 
 export function Order(){
+
+    const dispatch = useDispatch();
+    const int = useSelector(state => state.InterventionsReducer);
+
+    useEffect((orderId) => {
+        dispatch(order(orderId));
+        console.log('order');
+        console.log(int);
+    },[dispatch, int]);
 
     return(
         <div id="request">
@@ -24,22 +35,22 @@ export function Order(){
                     </thead>
                     <tr>
                         <td><span>Full name:</span></td>
-                        <td>John Smith</td>
+                        <td>{int.name}</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td><span>Address:</span></td>
-                        <td>Leninova 15 1/20</td>
+                        <td>{int.street} {int.number} {int.entrance}/{int.appartment}</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td><span>Phone number:</span></td>
-                        <td>+38972365412</td>
+                        <td>{int.phone}</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td><span>email:</span></td>
-                        <td>email@mail.com</td>
+                        <td>{int.email}</td>
                         <td></td>
                     </tr>
                     <tr>

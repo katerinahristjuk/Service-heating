@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function Request(){
 
@@ -19,6 +20,13 @@ export function Request(){
                 <div className="columns">
                     <div className="leftPart">
                     <form className='form'>
+                        <p>Full name</p>
+                        <input 
+                            type='text' 
+                            placeholder='John Smith'
+                            // value={user.firstName}
+                            // onChange={(e) => setUser({...user, firstName: e.target.value})}
+                            ></input>
                         <p>Your address</p>
                         <input 
                             type='text' 
@@ -59,8 +67,8 @@ export function Request(){
                             // onChange={(e) => setUser({...user, password: e.target.value})}                            
                             ></input>
                         <br/><br/>
-                        <button className='redButton' >REQUEST AN APPOINTMENT</button>
-                        {/* <button className='greenBtn' onClick={handleSubmit}>CREATE ACCOUNT</button> */}
+                        {/* <button className='redButton' >REQUEST AN APPOINTMENT</button> */}
+                        <button className='redButton' ><Link to='/interventions/request/done' className='link'>REQUEST AN APPOINTMENT</Link></button>
                     </form> 
                     </div>
                     <div className="leftPart">

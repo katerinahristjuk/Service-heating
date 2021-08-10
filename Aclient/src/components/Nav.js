@@ -17,7 +17,7 @@ export function Nav() {
                 {/* <li><Link to="/users" className="liNav">USERS</Link></li>
                 <li><Link to="/consumers" className="liNav">CONSUMERS</Link></li> */}
                 <li><Link to="/contact" className="liNav">CONTACT</Link></li>
-                <li><Link to="/request" className="liNav">REQUEST AN INTERVENTION</Link></li>
+                <li><Link to="/interventions/request" className="liNav">REQUEST AN INTERVENTION</Link></li>
                 {/* <li><Link to="/cake">Cakes</Link></li>
                 <li><Link to="/comments">Comments</Link></li> */}
             </ul> 
@@ -35,7 +35,7 @@ export function Nav() {
                 <li><Link to="/" className="redNav">LOG OUT</Link></li>
                 <li><Link to="/users" className="liNav">EMPLOYEES</Link></li>
                 <li><Link to="/consumers" className="liNav">CONSUMERS</Link></li>
-                <li><Link to="/active-interventions" className="liNav">ACTIVE INTERVENTIONS</Link></li>
+                <li><Link to="/interventions" className="liNav">ACTIVE INTERVENTIONS</Link></li>
             </ul>              
             </div>
         </div>

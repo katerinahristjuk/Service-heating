@@ -10,7 +10,7 @@ export function Home(){
                 <div id="welcomeItem2">
                     <h2>Welcome to</h2>
                     <h1><span>Heating</span> Service</h1>
-                    <p id="overline">If you have any problems with your heating system, please let us know: fill in our application form and <Link to="/request" className='link'><span> request an appointment</span></Link>.</p>
+                    <p id="overline">If you have any problems with your heating system, please let us know: fill in our application form and <Link to="/interventons/request" className='link'><span> request an appointment</span></Link>.</p>
                     {/* <button class="redButton">Learn more</button> */}
                 </div>
             </div>

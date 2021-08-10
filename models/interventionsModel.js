@@ -5,6 +5,9 @@ const interventionSchema = mongoose.Schema({
         type: Date,
         default: new Date
     },
+    name: {
+        type: String
+    },
     street: {
         type: String
     },
