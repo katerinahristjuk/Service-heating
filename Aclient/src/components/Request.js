@@ -1,7 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { request } from '../actions/InterventionsActions';
+
 
 export function Request(){
+
+    const [req, setReq] = useState({
+        name: "",
+        street: "",
+        number: "",
+        entrance: "",
+        appartment: "",
+        phone: "",
+        email: "",
+        description: ""
+    });
+    const [redirect, setRedirect] = useState(false)
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        dispatch(request(req))
+        setRedirect(true)
+    }
+
+    if(redirect) {
+        return <Redirect to={'/interventions/request/done'}/>
+    }
 
     return(
         <div id="request">
@@ -24,65 +52,59 @@ export function Request(){
                         <input 
                             type='text' 
                             placeholder='John Smith'
-                            // value={user.firstName}
-                            // onChange={(e) => setUser({...user, firstName: e.target.value})}
+                            value={req.name}
+                            onChange={(e) => setReq({...req, name: e.target.value})}
                             ></input>
                         <p>Your address</p>
                         <input 
                             type='text' 
                             placeholder='Street'
-                            // value={user.firstName}
-                            // onChange={(e) => setUser({...user, firstName: e.target.value})}
+                            value={req.street}
+                            onChange={(e) => setReq({...req, street: e.target.value})}
                             ></input>
                         <input 
                             type='text' 
                             placeholder='Number'
-                            // value={user.firstName}
-                            // onChange={(e) => setUser({...user, firstName: e.target.value})}
+                            value={req.number}
+                            onChange={(e) => setReq({...req, number: e.target.value})}
                             ></input>
                         <input 
                             type='text' 
                             placeholder='Entrance'
-                            // value={user.firstName}
-                            // onChange={(e) => setUser({...user, firstName: e.target.value})}
+                            value={req.entrance}
+                            onChange={(e) => setReq({...req, entrance: e.target.value})}
                             ></input>
                         <input 
                             type='text' 
                             placeholder='Appartment'
-                            // value={user.firstName}
-                            // onChange={(e) => setUser({...user, firstName: e.target.value})}
-                            ></input>
-                        <p>Phone number</p>
-                        <input 
-                            type='text' 
-                            placeholder='(+389)xx-xxx-xx-xx'
-                            // value={user.email}
-                            // onChange={(e) => setUser({...user, email: e.target.value})}                            
+                            value={req.appartment}
+                            onChange={(e) => setReq({...req, appartment: e.target.value})}
                             ></input>
                         <p>Email</p>
                         <input 
                             type='email' 
                             placeholder='email@email.com'
-                            // value={user.password}
-                            // onChange={(e) => setUser({...user, password: e.target.value})}                            
+                            value={req.email}
+                            onChange={(e) => setReq({...req, email: e.target.value})}                          
                             ></input>
                         <br/><br/>
-                        {/* <button className='redButton' >REQUEST AN APPOINTMENT</button> */}
-                        <button className='redButton' ><Link to='/interventions/request/done' className='link'>REQUEST AN APPOINTMENT</Link></button>
+                        <button className='redButton' onClick={handleSubmit}>REQUEST AN APPOINTMENT</button>
                     </form> 
                     </div>
                     <div className="leftPart">
                     <form className='form'>
-                        <p>Choose the type of intervention</p>
+                    <p>Phone number</p>
                         <input 
                             type='text' 
-                            placeholder='repair'
-                            // value={user.lastName}
-                            // onChange={(e) => setUser({...user, lastName: e.target.value})}                            
+                            placeholder='(+389)xx-xxx-xx-xx'
+                            value={req.phone}
+                            onChange={(e) => setReq({...req, phone: e.target.value})}                          
                             ></input>
                         <p>Describe your problem</p>
                         <textarea
                             placeholder='Please describe us your problem...'
+                            value={req.description}
+                            onChange={(e) => setReq({...req, description: e.target.value})}
                         />
                     </form>
                     </div>

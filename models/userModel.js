@@ -20,7 +20,7 @@ const userSchema = mongoose.Schema({
         type: String,
         // required: 'Password is required'
     },
-    confirm_pass: {
+    confirmPassword: {
         type: String,
         // required: 'Confirm your password is required'
     }

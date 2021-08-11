@@ -1,18 +1,30 @@
-import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import { order } from '../actions/InterventionsActions';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import '../assets/index.css';
 
 export function Order(){
 
-    const dispatch = useDispatch();
-    const int = useSelector(state => state.InterventionsReducer);
+    const [int, setInt] = useState({
+        name: "",
+        street: "",
+        number: "",
+        entrance: "",
+        appartment: "",
+        phone: "",
+        email: "",
+        description: ""
+    });
 
-    useEffect((orderId) => {
-        dispatch(order(orderId));
-        console.log('order');
-        console.log(int);
-    },[dispatch, int]);
+    const { orderId } = useParams();
+
+    const intervention = useSelector(state => (orderId ? state.InterventionsReducer.find(i => i._id === orderId) : null));
+
+    useEffect(() => {
+        if (intervention) {
+            setInt(intervention);
+        }
+    }, [intervention]);
 
     return(
         <div id="request">
@@ -24,7 +36,7 @@ export function Order(){
                     <b>Please check if the following information is correct and print the Intervention Order</b>
 
                 </h2>
-                    <button className='redButton' >PRINT</button>                            
+                    {/* <button className='redButton' >PRINT</button>                             */}
             </div>
             <div className='infoBlock'>
                 <table>

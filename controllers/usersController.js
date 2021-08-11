@@ -1,4 +1,7 @@
 const User = require('../models/userModel');
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
 fetchAll: async (req, res) =>{
@@ -34,15 +37,39 @@ fetchOne: async (req, res) =>{
 register: async (req, res) => {
     //da se smeni vo prav REGISTER a ne CREATE
     try{
-        const newUser = new User(req.body);
-        await newUser.save();
-        
-        const users = await User.find();
-        res.status(200).send({
+        if (!req.body.password || req.body.password != req.body.confirmPassword) {
+            return res.status(400).send({
+                error: true,
+                message: 'Bad request. Passwords don`t match :('
+            })
+        } //dali password-ot e vnesen i dali e ist so confirm_pass
+       
+        const user = await User.findOne({email: req.body.email});
+        if (user) {
+            return res.status(400).send({
+                error: true,
+                message: 'This email already exists! :('
+            })
+        } //dali vo bazata veke postoi vakov email
+
+        req.body.password = bcrypt.hashSync(req.body.password); // encrypts password
+        req.body.confirmPassword = bcrypt.hashSync(req.body.confirmPassword); // encrypts password
+
+        const newUser = await User.create(req.body);
+        res.status(201).send({
             error: false,
             message: `New user ${newUser.firstName} ${newUser.lastName} is here:`,
-            users
-        });
+            newUser
+         }) // zapis na nov korisnik
+        // const newUser = new User(req.body);
+        // await newUser.save();
+        
+        // const users = await User.find();
+        // res.status(200).send({
+        //     error: false,
+        //     message: `New user ${newUser.firstName} ${newUser.lastName} is here:`,
+        //     users
+        // });
     } catch (error) {
         res.status(500).send({
             error: true,

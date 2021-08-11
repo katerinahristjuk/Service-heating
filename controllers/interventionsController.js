@@ -52,6 +52,7 @@ delete: async (req, res) => {
         const interventions = await Intervention.find();
         res.status(200).send({
             message: `Intervention ${delInt._id} is successfully deleted`,
+            delInt,
             interventions
         });        
     } catch (error) {

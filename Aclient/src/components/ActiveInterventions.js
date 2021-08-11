@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import { interventions } from '../actions/InterventionsActions';
+import { interventions, done } from '../actions/InterventionsActions';
 import '../assets/index.css';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
@@ -12,6 +12,7 @@ export function ActiveInterventions(){
 
     useEffect(() => {
         dispatch(interventions());
+        dispatch(done())
         console.log(activeInterventions)
     },[activeInterventions, dispatch]);
 
@@ -54,8 +55,8 @@ export function ActiveInterventions(){
                                     <td>{int.email}</td>
                                     <td>{int.description}</td>
                                     <td>{int.status}</td>
-                                    <td><button className='redButton'><Link className='link' to={`/interventions/${int._id}`}>ORDER</Link></button></td>
-                                    <td><button className='redButton'>done</button></td>
+                                    <td><button className='redButton'><Link className='link' to={`/interventions/${int._id}`} orderId={int._id}>ORDER</Link></button></td>
+                                    <td><button className='redButton' onClick={()=>dispatch(done(int._id))}>done</button></td>
                                 </tr>
                             )
                         })}

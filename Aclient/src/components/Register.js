@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { register } from '../actions/UsersActions';
 
 export function Register(){
 
