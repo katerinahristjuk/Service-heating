@@ -1,5 +1,5 @@
 import * as api from '../api/users';
-import { FETCH_USERS } from '../constants/UserConstants';
+import { FETCH_USERS, REGISTER } from '../constants/UserConstants';
 
 export const fetchUsers = () => async (dispatch) => {
     try {
@@ -14,17 +14,17 @@ export const fetchUsers = () => async (dispatch) => {
     }
 };
 
-// export const register = (newUser) => async (dispatch) => {
-//     try {
-//         const {data} = await api.register(newUser);
-//          dispatch({
-//             type: REGISTER,
-//             payload: data.newUser
-//         })          
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };    
+export const register = (newUser) => async (dispatch) => {
+    try {
+        const {data} = await api.register(newUser);
+         dispatch({
+            type: REGISTER,
+            payload: data.newUser
+        })          
+    } catch (error) {
+        console.log(error);
+    }
+};    
 
 // export const login = (user) => async (dispatch) => {
 //     try {
