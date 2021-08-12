@@ -3,7 +3,7 @@ const api = express();
 const controller = require('../../controllers/usersController');
 const mongoose = require('mongoose');
 const cors= require('cors');
-// const jwt = require('express-jwt')
+const jwt = require('jsonwebtoken')
 
 api.use(express.json());
 api.use(cors());
@@ -21,7 +21,7 @@ const domain = '/service-heating/api/v1'
 
 api.get(`${domain}/users`, controller.fetchAll)
 api.post(`${domain}/register`, controller.register)
-// api.post(`${domain}/login`, controller.login)
+api.post(`${domain}/login`, controller.login)
 api.get(`${domain}/:id`, controller.fetchOne)
 // api.patch(`${domain}/:id`, controller.update)
 api.delete(`${domain}/:id`, controller.delete)

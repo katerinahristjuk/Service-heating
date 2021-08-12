@@ -1,20 +1,18 @@
 /* eslint-disable import/no-anonymous-default-export */
-import {FETCH_USERS, 
-    // REGISTER, LOGIN, 
-    UPDATE_USER, DELETE_USER } from '../constants/UserConstants';
+import {FETCH_USERS, REGISTER, LOGIN, UPDATE_USER, DELETE_USER } from '../constants/UserConstants';
 
 
 export default (state = [], action) => {
     switch (action.type) {
 
-        // case LOGIN:
-        //     return {
-        //         users: action.payload.user,
-        //         token: action.payload.token
-        //     }
+        case LOGIN:
+            return {
+                users: action.payload.user,
+                token: action.payload.token
+            }
 
-        // case REGISTER:
-        //     return { users: [...state, action.payload]}
+        case REGISTER:
+            return { users: [...state, action.payload]}
 
         case FETCH_USERS:
             return action.payload 

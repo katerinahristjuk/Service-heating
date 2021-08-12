@@ -1,5 +1,5 @@
 import * as api from '../api/users';
-import { FETCH_USERS, REGISTER } from '../constants/UserConstants';
+import { FETCH_USERS, REGISTER, LOGIN } from '../constants/UserConstants';
 
 export const fetchUsers = () => async (dispatch) => {
     try {
@@ -26,18 +26,18 @@ export const register = (newUser) => async (dispatch) => {
     }
 };    
 
-// export const login = (user) => async (dispatch) => {
-//     try {
-//         const { data } = await api.login(user)
+export const login = (user) => async (dispatch) => {
+    try {
+        const { data } = await api.login(user)
         
-//         dispatch({
-//             type: LOGIN,
-//             payload: data
-//         })
-//     } catch (error) {
-//         console.log(error);        
-//     }
-// };
+        dispatch({
+            type: LOGIN,
+            payload: data
+        })
+    } catch (error) {
+        console.log(error);        
+    }
+};
 
 // export const deleteUser =() => async (dispatch) => {
 //     try {

@@ -1,6 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { login } from '../actions/UsersActions';
 
 export function Login(){
+
+    const [user, setUser] = useState({
+        email: "",
+        password: "",
+    });
+    const [redirect, setRedirect] = useState(false)
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        dispatch(login(user))
+        setRedirect(true)
+    }
+
+    if(redirect) {
+        return <Redirect to={'/interventions'}/>
+    }
+
 
     return(
         <div id="login">
@@ -21,19 +44,19 @@ export function Login(){
                             type='email' 
                             className='input' 
                             placeholder='user@domain.com'
-                            // value={user.email}
-                            // onChange={(e) => setUser({...user, email: e.target.value})}
+                            value={user.email}
+                            onChange={(e) => setUser({...user, email: e.target.value})}
                             ></input>
                         <p>Password</p>
                         <input 
                             type='password' 
                             className='input' 
                             placeholder='**********'
-                            // value={user.password}
-                            // onChange={(e) => setUser({...user, password: e.target.value})}
+                            value={user.password}
+                            onChange={(e) => setUser({...user, password: e.target.value})}
                             ></input>
                         <br/><br/>
-                        <button className='redButton'>LOG IN</button>
+                        <button className='redButton' onClick={handleSubmit}>LOG IN</button>
                         {/* <button className='greenBtn' onClick={handleSubmit}>LOG IN</button> */}
                     </form>
                 </div>
