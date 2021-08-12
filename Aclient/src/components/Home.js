@@ -1,7 +1,23 @@
-import React from 'react';
+import { STATES } from 'mongoose';
+import React, {useState}  from 'react';
 import { Link } from 'react-router-dom';
 
 export function Home(){
+
+    const services = [
+        {title: "Heating sysem repair", text: "Nunc sit amet laoreet augue. Proin sem felis, lobortis ut sem vitae, facilisis consequat odio. Vestibulum nec efficitur quam. Sed vulputate nisi leo, ac consequat lacus euismod ut. Vestibulum ante ipsum primis in faucibus orci luctus etultrices posuere cubilia curae; Curabitur et pulvinar augue, ac bibendum ex. Suspendisse consequat ante nisl, quis finibus nulla pellentesque sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptoshimenaeos."},
+        {title: "Installation of new radiator", text: "Nunc sit amet laoreet augue. Proin sem felis, lobortis ut sem vitae, facilisis consequat odio. Vestibulum nec efficitur quam. Sed vulputate nisi leo, ac consequat lacus euismod ut. Vestibulum ante ipsum primis in faucibus orci luctus etultrices posuere cubilia curae; Curabitur et pulvinar augue, ac bibendum ex. Suspendisse consequat ante nisl, quis finibus nulla pellentesque sit amet"},
+        {title: "Maintenance of internal installation", text: "Nunc sit amet laoreet augue. Proin sem felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptoshimenaeos."},
+        {title: "Leak repair", text: "Proin sem felis, lobortis ut sem vitae, facilisis consequat odio. Vestibulum nec efficitur quam. Sed vulputate nisi leo, ac consequat lacus euismod ut. Vestibulum ante ipsum primis in faucibus orci luctus etultrices posuere cubilia curae; Curabitur et pulvinar augue, ac bibendum ex. Suspendisse consequat ante nisl, quis finibus nulla pellentesque sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptoshimenaeos."},
+        {title: "Valve replacement", text: "Facilisis consequat odio. Vestibulum nec efficitur quam. Sed vulputate nisi leo, ac consequat lacus euismod ut. Vestibulum ante ipsum primis in faucibus orci luctus etultrices posuere cubilia curae; Curabitur et pulvinar augue, ac bibendum ex. Suspendisse consequat ante nisl, quis finibus nulla pellentesque sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptoshimenaeos."},
+        {title: "Relocation of radiator", text: "Lobortis ut sem vitae, facilisis consequat odio. Vestibulum nec efficitur quam. Sed vulputate nisi leo, ac consequat lacus euismod ut. Vestibulum ante ipsum primis in faucibus orci luctus etultrices posuere cubilia curae; Curabitur et pulvinar augue, ac bibendum ex. Suspendisse consequat ante nisl, quis finibus nulla pellentesque sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptoshimenaeos."}
+    ];
+
+    const [selectedService, setSelectedService] = useState({title: "Heating sysem repair", text: "Nunc sit amet laoreet augue. Proin sem felis, lobortis ut sem vitae, facilisis consequat odio. Vestibulum nec efficitur quam. Sed vulputate nisi leo, ac consequat lacus euismod ut. Vestibulum ante ipsum primis in faucibus orci luctus etultrices posuere cubilia curae; Curabitur et pulvinar augue, ac bibendum ex. Suspendisse consequat ante nisl, quis finibus nulla pellentesque sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptoshimenaeos."})
+
+    const chooseService = (e) => {
+        setSelectedService({ title: e.target.value})
+    };
 
     return(
         <div id="home">
@@ -34,20 +50,18 @@ export function Home(){
                     consequat urna et dapibus. Fusce consequat magna arcu. Curabitur augue sem, blandit sed turpis eget, aliquam dignissim odio. Aenean sed nisi ultrices, accumsan nisl eu, tincidunt dui.
                 </p>
                 <ul>
-                    <li class="leftList">Heating sysem repair</li>
-                    <li class="leftList">Installation of new radiator</li>
-                    <li class="leftList">Maintenance of internal installation </li>
-                    <li class="leftList">Leak repair</li>
-                    <li class="leftList">Valve replacement</li>
-                    <li class="leftList">Relocation of radiator</li>
+                    <li class="leftList" onClick={chooseService}>{services[0].title}</li>
+                    <li class="leftList">{services[1].title}</li>
+                    <li class="leftList">{services[2].title}</li>
+                    <li class="leftList">{services[3].title}</li>
+                    <li class="leftList">{services[4].title}</li>
+                    <li class="leftList">{services[5].title}</li>
                 </ul><br/>
             </div>
             <div className="rightPart">
                 <div className="rightPart2">
-                    <h2>Heating sysem repair</h2>
-                    <p>Nunc sit amet laoreet augue. Proin sem felis, lobortis ut sem vitae, facilisis consequat odio. Vestibulum nec efficitur quam. Sed vulputate nisi leo, ac consequat lacus euismod ut. Vestibulum ante ipsum primis in faucibus orci luctus et
-                    ultrices posuere cubilia curae; Curabitur et pulvinar augue, ac bibendum ex. Suspendisse consequat ante nisl, quis finibus nulla pellentesque sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                    himenaeos.
+                    <h2>{selectedService.title}</h2>
+                    <p>{selectedService.text}
                     </p>
                 </div>
             </div>
