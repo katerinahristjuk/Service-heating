@@ -1,4 +1,3 @@
-import { STATES } from 'mongoose';
 import React, {useState}  from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,19 +14,13 @@ export function Home(){
 
     const [selectedService, setSelectedService] = useState({title: "Heating sysem repair", text: "Nunc sit amet laoreet augue. Proin sem felis, lobortis ut sem vitae, facilisis consequat odio. Vestibulum nec efficitur quam. Sed vulputate nisi leo, ac consequat lacus euismod ut. Vestibulum ante ipsum primis in faucibus orci luctus etultrices posuere cubilia curae; Curabitur et pulvinar augue, ac bibendum ex. Suspendisse consequat ante nisl, quis finibus nulla pellentesque sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptoshimenaeos."})
 
-    const chooseService = (e) => {
-        setSelectedService({ title: e.target.value})
-    };
-
     return(
         <div id="home">
-            {/* <h2>Home</h2> */}
             <div id="welcomeItem">
                 <div id="welcomeItem2">
                     <h2>Welcome to</h2>
                     <h1><span>Heating</span> Service</h1>
                     <p id="overline">If you have any problems with your heating system, please let us know: fill in our application form and <Link to="/interventions/request" className='link'><span> request an appointment</span></Link>.</p>
-                    {/* <button class="redButton">Learn more</button> */}
                 </div>
             </div>
             <div class="infoBlock">
@@ -42,7 +35,6 @@ export function Home(){
                 </p>
                 <button class="redButton"><Link to="/contact" className='link'>Learn more</Link></button>
             </div>
-
             <div className="columns">
                 <div className="leftPart">
                 <h2>Services</h2>
@@ -50,13 +42,12 @@ export function Home(){
                     consequat urna et dapibus. Fusce consequat magna arcu. Curabitur augue sem, blandit sed turpis eget, aliquam dignissim odio. Aenean sed nisi ultrices, accumsan nisl eu, tincidunt dui.
                 </p>
                 <ul>
-                    <li class="leftList" onClick={chooseService}>{services[0].title}</li>
-                    <li class="leftList">{services[1].title}</li>
-                    <li class="leftList">{services[2].title}</li>
-                    <li class="leftList">{services[3].title}</li>
-                    <li class="leftList">{services[4].title}</li>
-                    <li class="leftList">{services[5].title}</li>
-                </ul><br/>
+                    {services.map(service => {
+                        return(
+                            <li class="leftList" onPointerOver={(e) => setSelectedService(service)}>{service.title}</li>
+                        )
+                    })}
+                </ul>
             </div>
             <div className="rightPart">
                 <div className="rightPart2">
@@ -66,7 +57,6 @@ export function Home(){
                 </div>
             </div>
         </div>
-
         <div class="infoBlock">
             <h2><b>Get in touch</b></h2>
             <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor aliquet placerat. Nunc cursus nisi malesuada felis consequat, eget venenatis libero mollis. Phasellus libero justo, accumsan ac neque non, tincidunt molestie velit. Integer ac
@@ -76,7 +66,6 @@ export function Home(){
             </p>
             <button class="redButton"><Link to="/contact" className='link'>Contact us</Link></button>
         </div>
-
     </div>
     )
 };
