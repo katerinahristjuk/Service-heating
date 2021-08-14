@@ -1,14 +1,22 @@
 /* eslint-disable import/no-anonymous-default-export */
-import {FETCH_USERS, REGISTER, LOGIN, UPDATE_USER, DELETE_USER } from '../constants/UserConstants';
+import {FETCH_USERS, REGISTER, LOGIN, LOGOUT, UPDATE_USER, DELETE_USER } from '../constants/UserConstants';
 
 
 export default (state = [], action) => {
     switch (action.type) {
 
         case LOGIN:
+            localStorage.setItem('profile', JSON.stringify({ ...action?.payload}));
             return {
-                users: action.payload.user,
-                token: action.payload.token
+                user: action?.payload.user,
+                token: action?.payload.token
+            }
+
+        case LOGOUT:
+            localStorage.clear();
+            return{
+                user: null,
+                token: null
             }
 
         case REGISTER:

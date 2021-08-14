@@ -21,7 +21,7 @@ export function Login(){
     }
 
     if(redirect) {
-        return <Redirect to={'/interventions'}/>
+        return <Redirect to={'/'}/>
     }
 
 
