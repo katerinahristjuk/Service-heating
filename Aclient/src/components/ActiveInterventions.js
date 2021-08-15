@@ -10,14 +10,9 @@ export function ActiveInterventions(){
     const dispatch = useDispatch();
     const activeInterventions = useSelector(state => state.InterventionsReducer);
 
-    // const doneI = (id) => {
-    //     dispatch(done(id))
-    // }
-
     useEffect(() => {
         dispatch(interventions());
         dispatch(done())
-        // console.log(activeInterventions)
     },[dispatch]);
 
     return(
@@ -60,7 +55,6 @@ export function ActiveInterventions(){
                                     <td>{int.description}</td>
                                     <td>{int.status}</td>
                                     <td><button className='redButton'><Link className='link' to={`/interventions/${int._id}`} orderId={int._id}>ORDER</Link></button></td>
-                                    {/* <td><button className='redButton' onClick={doneI(int._id)}>done</button></td> */}
                                     <td><button className='redButton' onClick={()=>dispatch(done(int._id))}>done</button></td>
                                 </tr>
                             )

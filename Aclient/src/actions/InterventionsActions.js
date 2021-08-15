@@ -13,6 +13,7 @@ export const interventions = () => async (dispatch) => {
         console.log(error);
     }
 };
+
 export const request = (newIntervention) => async (dispatch) => {
     try {
         const {data} = await api.request(newIntervention);
@@ -25,18 +26,7 @@ export const request = (newIntervention) => async (dispatch) => {
         console.log(error);
     }
 };
-// export const createRecipe = (recipe) => async (dispatch) => {
-//     try {
-//         const { data } = await api.createRecipe(recipe);
 
-//         dispatch({
-//             type: CREATE_RECIPE,
-//             payload: data
-//         })
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
 export const order = (orderId) => async (dispatch) => {
     try {
         const {data} = await api.order(orderId);

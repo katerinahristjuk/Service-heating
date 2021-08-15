@@ -1,8 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Cake } from './Cake';
 import { Nav } from './Nav';
-import {Comments} from './Comments';
 import {Login} from './Login';
 import {Register} from './Register';
 import {Users} from './Users';
@@ -21,8 +19,6 @@ export function App() {
             <Nav />
             
             <Switch>
-                <Route path="/cake" component={Cake} />
-                <Route path="/comments" component={Comments} />
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
@@ -33,9 +29,7 @@ export function App() {
                 <Route exact path="/interventions/request" component={Request} />
                 <Route exact path="/interventions/request/done" component={ThankYouNote} />
                 <Route exact path="/interventions/:orderId" component={Order} />
-
             </Switch>
         </div>
     )
-
 }

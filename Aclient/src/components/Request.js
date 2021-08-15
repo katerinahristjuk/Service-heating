@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { request } from '../actions/InterventionsActions';
 
 
@@ -16,19 +16,13 @@ export function Request(){
         email: "",
         description: ""
     });
-    const [redirect, setRedirect] = useState(false)
-
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        dispatch(request(req))
-        setRedirect(true)
-    }
-
-    if(redirect) {
-        return <Redirect to={'/interventions/request/done'}/>
+        dispatch(request(req));
+        history.push('/interventions/request/done');
     }
 
     return(

@@ -17,6 +17,6 @@ export default (state = [], action) => {
         case DONE_INTERVENTION:
             return state.filter( int => int._id !== action.payload._id)
 
-        default: return state;
+        default: return state
     }
 } 

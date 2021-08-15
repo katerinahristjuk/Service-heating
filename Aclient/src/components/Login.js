@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { login } from '../actions/UsersActions';
 
 export function Login(){
@@ -9,21 +9,14 @@ export function Login(){
         email: "",
         password: "",
     });
-    const [redirect, setRedirect] = useState(false)
-
+    const history = useHistory();
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         dispatch(login(user))
-        setRedirect(true)
+        history.push('/')
     }
-
-    if(redirect) {
-        return <Redirect to={'/'}/>
-    }
-
 
     return(
         <div id="login">
@@ -57,7 +50,6 @@ export function Login(){
                             ></input>
                         <br/><br/>
                         <button className='redButton' onClick={handleSubmit}>LOG IN</button>
-                        {/* <button className='greenBtn' onClick={handleSubmit}>LOG IN</button> */}
                     </form>
                 </div>
             </div>

@@ -68,7 +68,6 @@ export function Register(){
                             ></input>
                         <br/><br/>
                         <button className='redButton' onClick={handleSubmit}>CREATE ACCOUNT</button>
-                        {/* <button className='greenBtn' onClick={handleSubmit}>CREATE ACCOUNT</button> */}
                     </form> 
                     </div>
                     <div className="leftPart">

@@ -36,7 +36,6 @@ export function Order(){
                     <b>Please check if the following information is correct and print the Intervention Order</b>
 
                 </h2>
-                    {/* <button className='redButton' >PRINT</button>                             */}
             </div>
             <div className='infoBlock'>
                 <table>

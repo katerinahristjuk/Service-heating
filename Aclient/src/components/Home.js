@@ -23,9 +23,9 @@ export function Home(){
                     <p id="overline">If you have any problems with your heating system, please let us know: fill in our application form and <Link to="/interventions/request" className='link'><span> request an appointment</span></Link>.</p>
                 </div>
             </div>
-            <div class="infoBlock">
+            <div className="infoBlock">
                 <h2><b>About us</b></h2>
-                <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor aliquet placerat. Nunc cursus nisi malesuada felis consequat, eget venenatis libero mollis. Phasellus libero justo, accumsan ac neque non, tincidunt molestie velit. Integer ac
+                <p className="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor aliquet placerat. Nunc cursus nisi malesuada felis consequat, eget venenatis libero mollis. Phasellus libero justo, accumsan ac neque non, tincidunt molestie velit. Integer ac
                     turpis in purus ornare porta vitae et ante. Sed auctor purus ut nibh elementum, vel sollicitudin nibh facilisis. Quisque ac egestas enim. Sed feugiat risus rhoncus metus varius, at dignissim mauris sagittis. Vestibulum pretium est eu justo
                     pretium finibus. Vestibulum a interdum justo. Curabitur sit amet massa a lorem dapibus suscipit ac ac dolor. Nam ut imperdiet eros. Etiam non porta lorem, vitae porttitor elit. Integer vel porttitor lorem. Donec suscipit lorem orci, sit amet
                     placerat justo placerat sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor aliquet placerat. Nunc cursus nisi malesuada felis consequat, eget venenatis libero mollis. Phasellus libero justo, accumsan ac neque non, tincidunt molestie velit. Integer ac
@@ -33,7 +33,7 @@ export function Home(){
                     pretium finibus. Vestibulum a interdum justo. Curabitur sit amet massa a lorem dapibus suscipit ac ac dolor. Nam ut imperdiet eros. Etiam non porta lorem, vitae porttitor elit. Integer vel porttitor lorem. Donec suscipit lorem orci, sit amet
                     placerat justo placerat sed.l
                 </p>
-                <button class="redButton"><Link to="/contact" className='link'>Learn more</Link></button>
+                <button className="redButton"><Link to="/contact" className='link'>Learn more</Link></button>
             </div>
             <div className="columns">
                 <div className="leftPart">
@@ -44,7 +44,7 @@ export function Home(){
                 <ul>
                     {services.map(service => {
                         return(
-                            <li class="leftList" onPointerOver={(e) => setSelectedService(service)}>{service.title}</li>
+                            <li key={service._id} class="leftList" onPointerOver={(e) => setSelectedService(service)}>{service.title}</li>
                         )
                     })}
                 </ul>
@@ -57,14 +57,14 @@ export function Home(){
                 </div>
             </div>
         </div>
-        <div class="infoBlock">
+        <div className="infoBlock">
             <h2><b>Get in touch</b></h2>
-            <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor aliquet placerat. Nunc cursus nisi malesuada felis consequat, eget venenatis libero mollis. Phasellus libero justo, accumsan ac neque non, tincidunt molestie velit. Integer ac
+            <p className="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor aliquet placerat. Nunc cursus nisi malesuada felis consequat, eget venenatis libero mollis. Phasellus libero justo, accumsan ac neque non, tincidunt molestie velit. Integer ac
                     turpis in purus ornare porta vitae et ante. Sed auctor purus ut nibh elementum, vel sollicitudin nibh facilisis. Quisque ac egestas enim. Sed feugiat risus rhoncus metus varius, at dignissim mauris sagittis. Vestibulum pretium est eu justo
                     pretium finibus. Vestibulum a interdum justo. Curabitur sit amet massa a lorem dapibus suscipit ac ac dolor. Nam ut imperdiet eros. Etiam non porta lorem, vitae porttitor elit. Integer vel porttitor lorem. Donec suscipit lorem orci, sit amet
                     placerat justo placerat sed.
             </p>
-            <button class="redButton"><Link to="/contact" className='link'>Contact us</Link></button>
+            <button className="redButton"><Link to="/contact" className='link'>Contact us</Link></button>
         </div>
     </div>
     )

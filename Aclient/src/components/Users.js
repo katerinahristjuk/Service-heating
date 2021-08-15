@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import { fetchUsers } from '../actions/UsersActions' 
+import { fetchUsers } from '../actions/UsersActions';
 
 export function Users(){
 
@@ -15,7 +15,7 @@ export function Users(){
 
     return(
         <div id="users">
-        <div class="infoBlock">
+        <div className="infoBlock">
             <h2><span>List of employees</span></h2>
          </div>
         <div className='infoBlock'>
