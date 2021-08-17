@@ -42,7 +42,7 @@ export function Order(){
                     <thead>
                         <th></th>
                         <th><div className="logoImg"></div></th>
-                        <th><h2><span>Intervention Order No. XXXX</span></h2></th>
+                        <th><h2><span>Intervention Order No. {int._id}</span></h2></th>
                     </thead>
                     <tr>
                         <td><span>Full name:</span></td>
