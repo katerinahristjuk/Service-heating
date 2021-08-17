@@ -5,9 +5,9 @@
         "collection": "..."
     },
     "ports": {
-        "proxy": ...,
-        "interventions": ...,
-        "users": ...
+        "proxy": "...",
+        "interventions": "...",
+        "users": "..."
     },
     "auth": {
         "jwt_key": "..."
