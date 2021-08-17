@@ -24,9 +24,9 @@ The application was designed to ease and fasten the cooperation between the cons
 1. Access the database of comsumers,
 1. Get the contacts of avaliable employees.
 
-## How it works
+# How it works
 
-**For consumers:**
+##For consumers:
 1. Visit the Heating Service home page,
 ![1_home](https://user-images.githubusercontent.com/71920644/129726920-e4f9aaf0-0b5c-4d55-a736-ca4e2987658d.jpg)
 2. Check the list of our services and contacts,
@@ -39,7 +39,7 @@ The application was designed to ease and fasten the cooperation between the cons
 ![5_thanks](https://user-images.githubusercontent.com/71920644/129727034-9e739bcf-730e-497b-8a5c-fd71fedeeaa4.jpg)
 
 
-**For employees:**
+##For employees:
 1. Register of new employees,
 ![6_register](https://user-images.githubusercontent.com/71920644/129727076-b8e50613-9db3-4e29-8a75-8548beb685b8.jpg)
 2. Log in,
@@ -55,6 +55,6 @@ The application was designed to ease and fasten the cooperation between the cons
 ![11_employees](https://user-images.githubusercontent.com/71920644/129727213-873128df-94ed-4ae0-8fe4-415d69ddac20.jpg)
 
 
-## Author
+# Author
 The original project was made by Katerina Hristjuk.
  
