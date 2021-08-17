@@ -1,0 +1,15 @@
+{
+    "db": {
+        "username": "KaterinaH",
+        "password": "KaterinaH123",
+        "collection": "service"
+    },
+    "ports": {
+        "proxy": 7000,
+        "interventions": 7001,
+        "users": 7002
+    },
+    "auth": {
+        "jwt_key": "secret_key"
+    }
+}

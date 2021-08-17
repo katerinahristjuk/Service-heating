@@ -3,21 +3,12 @@ const api = express();
 const controller = require('../../controllers/usersController');
 const mongoose = require('mongoose');
 const cors= require('cors');
-const jwt = require('jsonwebtoken')
+const config = require ('../../config/index');
 
 api.use(express.json());
 api.use(cors());
 
-
-// api.use(jwt({secret: 'secret_key', algorithms: ['HS256']}));
-
-// api.use(jwt({
-//     secret: 'secret_key',
-//     algorithms: ['HS256']
-// }).unless({ path: '/api/v1/users' }));
-
 const domain = '/service-heating/api/v1'
-//da se stavi vo config
 
 api.get(`${domain}/users`, controller.fetchAll)
 api.post(`${domain}/register`, controller.register)
@@ -26,8 +17,8 @@ api.get(`${domain}/:id`, controller.fetchOne)
 // api.patch(`${domain}/:id`, controller.update)
 api.delete(`${domain}/:id`, controller.delete)
 
-const CONNECTION_URL = 'mongodb+srv://KaterinaH:KaterinaH123@cluster0.yyofs.mongodb.net/service?retryWrites=true&w=majority';   
-const PORT = process.env.PORT || 7002
+const CONNECTION_URL = `mongodb+srv://${config.get('db').username}:${config.get('db').password}@cluster0.yyofs.mongodb.net/${config.get('db').collection}?retryWrites=true&w=majority`;   
+const PORT = process.env.PORT || config.get('ports').users;
     
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then (() => console.log('Connected to database!'))
