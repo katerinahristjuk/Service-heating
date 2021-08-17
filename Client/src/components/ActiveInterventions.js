@@ -24,7 +24,7 @@ export function ActiveInterventions(){
                 <table>
                     <thead>
                         <tr>
-                            <th>ID-request</th>
+                            {/* <th>ID-request</th> */}
                             <th>Full name</th>
                             <th>Date</th>
                             <th>Street</th>
@@ -43,7 +43,7 @@ export function ActiveInterventions(){
                         {activeInterventions.map(int => {
                             return(
                                 <tr key={int._id}>
-                                    <td>{int._id}</td>
+                                    {/* <td>{int._id}</td> */}
                                     <td>{int.name}</td>
                                     <td>{moment(new Date(int.date)).format("YYYY-MM-DD HH:mm")}</td>
                                     <td>{int.street}</td>
