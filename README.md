@@ -1,5 +1,5 @@
-# Service-heating
-This is a Web application, designed for coordination of activities of maitenance department.
+# Service Heating
+This is a Web application, designed for activities coordination between consumers and maitenance department.
 
 # Description
 For this Web application the following technologies were used:
