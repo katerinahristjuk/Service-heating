@@ -13,15 +13,15 @@ The application was designed to ease and fasten the cooperation between the cons
 
 **As a client (consumer) you can:**
 
-1. Visit the webpage of Heating-Service and find out about our services;
-1. Leave a request for an intervention.
+1. Visit the webpage of Heating-Service and find out about our services,
+1. Leave a request for an intervention,
 1. Check for our contacs in case of any questions.
 
 **As an employee you can:**
 
-1. Log in and check for recently income active interventions;
-1. Create an order for each intervention;
-1. Access the database of comsumers.
+1. Log in and check for recently income active interventions,
+1. Create an order for each intervention,
+1. Access the database of comsumers,
 1. Get the contacts of avaliable employees.
 
 ## How it works
